@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Home = () => {
   return (
     <div className="text-center">
@@ -9,8 +11,10 @@ const Home = () => {
       </p>
 
       <div className="mt-8">
-        <button className="bg-purple-500 hover:bg-purple-400 text-white px-4 py-2 rounded">
-          View Portfolio
+        <button className="bg-purple-500 hover:bg-purple-400 text-white px-4 py-2 rounded-lg shadow-lg">
+          <Link to='/portfolio'>
+            View Portfolio
+          </Link>
         </button>
       </div>
     </div>
