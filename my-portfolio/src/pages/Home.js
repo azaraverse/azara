@@ -1,7 +1,7 @@
 const Home = () => {
   return (
     <div className="text-center">
-      <h1 className="text-5xl font-extrabold mt-10">
+      <h1 className="text-5xl font-extrabold mt-20">
         Hello World, I go by Azara. Actual name? Yushahu Yussif!
       </h1>
       <p className="text-xl mt-4">
