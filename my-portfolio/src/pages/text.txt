@@ -1,0 +1,1 @@
+For each page like Home, Blog, Portfolio, Contact, etc.
