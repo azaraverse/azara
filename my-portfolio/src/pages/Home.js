@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import Prism from 'prismjs';
 import "prismjs/components/prism-python";
@@ -22,7 +21,7 @@ const Home = ({ darkMode }) => {
   }, []);
 
   return (
-    <div className={`min-h-screen ${darkMode ? "bg-gray-900 text-white" : "bg-gray-50 text-gray-900"} transition-colors duration-300`}>
+    <div className={`min-h-screen ${darkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-900"} transition-colors duration-500`}>
       {/* Animated background */}
       <div className="fixed inset-0 z-0 overflow-hidden">
         <motion.div
@@ -46,14 +45,30 @@ const Home = ({ darkMode }) => {
       <div className="relative">
         {/* Main content */}
         <main className="py-48 px-6">
-          <h1 className="text-4xl font-extrabold mb-6 text-center">
+          <motion.h1
+            className="text-4xl font-extrabold mb-6 text-center tracking-tight"
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
             Hi! I am <span className="text-skin">Azara</span>.
-          </h1>
-          <p className="text-center max-w-lg mx-auto">
-            This is a simple introduction to my work and experience. I am a developer with experience in <span className="text-skin">backend</span> and <span className="text-skin">frontend</span> technologies.
-          </p>
+          </motion.h1>
+          <motion.p
+            className="text-center max-w-lg mx-auto mb-8"
+            initial={{ y: -30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.4 }}
+          >
+            I am a developer with experience in <span className="text-skin">backend</span> and <span className="text-skin">frontend</span> technologies,
+            focused on building experiences with code.
+          </motion.p>
           {/* Social Links */}
-          <div className="mt-6 flex justify-center space-x-6">
+          <motion.div
+            className="mt-6 flex justify-center space-x-6"
+            initial={{ y: -10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.2, delay: 0.7 }}
+          >
             <a href="https://github.com/gitloper-azara" target="_blank" rel="noreferrer" aria-label="GitHub" className="text-skin hover:text-gray-700">
               <SiGithub size={24} />
             </a>
@@ -63,6 +78,32 @@ const Home = ({ darkMode }) => {
             <a href="https://linkedin.com/in/yushahuazara" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-skin hover:text-gray-700">
               <Linkedin size={24} />
             </a>
+          </motion.div>
+
+          {/* custom python code block */}
+          <div className="mt-12 p-6 rounded-lg shadow-lg items-center">
+            <pre className="text-left text-sm md:text-base text-gray-900 dark:text-white transition duration-500">
+              <code className="language-python">
+                {`
+class Developer():
+      """ Dev Model
+      """
+
+      def __init__(self) -> None:
+          """ Initialise Dev model with default
+              values
+          """
+          self.name = "Yushahu Yussif"
+          self.alias = "Azara"
+          self.skills = [
+               "Python",
+               "Django",
+               "JavaScript",
+               "React"
+          ]
+`}
+              </code>
+            </pre>
           </div>
         </main>
       </div>

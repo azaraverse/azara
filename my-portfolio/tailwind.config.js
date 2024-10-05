@@ -8,9 +8,9 @@ module.exports = {
     extend: {
         colors: {
             skin: {
-                DEFAULT: '#C2851B',
+                DEFAULT: '#C2854C',
                 light: '#E4A672',
-                dark: '#C97C4A'
+                dark: '#C26D1B'
             }
         }
     },
