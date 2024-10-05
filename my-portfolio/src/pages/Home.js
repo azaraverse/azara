@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Linkedin } from "react-feather";
-import { SiGithub, SiX } from "react-icons/si";
+import { SiGithub, SiX, SiFacebook } from "react-icons/si";
 import TypingCodeBlock from "../components/TypingCode";
 
 const Home = ({ darkMode }) => {
@@ -63,14 +63,17 @@ const Home = ({ darkMode }) => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.2, delay: 0.7 }}
           >
-            <a href="https://github.com/gitloper-azara" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-skin hover:text-gray-700">
+            <a href="https://github.com/gitloper-azara" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-skin hover:text-gray-700 dark:hover:text-white">
               <SiGithub size={24} />
             </a>
-            <a href="https://twitter.com/muqitazara" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-skin hover:text-gray-700">
+            <a href="https://twitter.com/muqitazara" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-skin hover:text-gray-700 dark:hover:text-white">
               <SiX size={24} />
             </a>
-            <a href="https://linkedin.com/in/yushahuazara" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-skin hover:text-gray-700">
+            <a href="https://linkedin.com/in/yushahuazara" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-skin hover:text-gray-700 dark:hover:text-white">
               <Linkedin size={24} />
+            </a>
+            <a href="https://www.facebook.com/yushahuazara/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-skin hover:text-gray-700 dark:hover:text-white">
+              <SiFacebook size={24} />
             </a>
           </motion.div>
 

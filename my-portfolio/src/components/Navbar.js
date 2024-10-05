@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Sun, Moon } from "lucide-react";
-import { SiGithub, SiX } from "react-icons/si";
+import { SiGithub, SiX, SiFacebook } from "react-icons/si";
 import { Linkedin } from "react-feather";
 import { motion } from "framer-motion";
 
@@ -39,6 +39,9 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
             </a>
             <a href="https://linkedin.com/in/yushahuazara" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-skin hover:text-gray-700 dark:hover:text-white">
               <Linkedin size={24} />
+            </a>
+            <a href="https://www.facebook.com/yushahuazara/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-skin hover:text-gray-700 dark:hover:text-white">
+              <SiFacebook size={24} />
             </a>
           </div>
 
