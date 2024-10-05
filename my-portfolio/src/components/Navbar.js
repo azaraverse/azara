@@ -20,29 +20,24 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
         <div className="hidden md:flex items-center space-x-6">
           <NavLink
             to="/portfolio"
-            className={({ isActive }) => `font-semibold text-skin px-5 py-2 ${isActive ? "text-skin-light hover:text-skin" : "hover:text-skin-light"}`}>
+            className={({ isActive }) => `font-semibold text-skin px-5 py-2 ${isActive ? "text-skin hover:text-gray-700" : "hover:text-gray-700 dark:hover:text-white"}`}>
             Portfolio( )
           </NavLink>
           <NavLink
             to="/blog"
-            className={({ isActive }) => `font-semibold text-skin px-5 py-2 ${isActive ? "text-skin-light hover:text-skin" : "hover:text-skin-light"}`}>
+            className={({ isActive }) => `font-semibold text-skin px-5 py-2 ${isActive ? "text-skin hover:text-gray-700" : "hover:text-gray-700 dark:hover:text-white"}`}>
             Blogs( )
-          </NavLink>
-          <NavLink
-            to="/about"
-            className={({ isActive }) => `font-semibold text-skin px-5 py-2 ${isActive ? "text-skin-light hover:text-skin" : "hover:text-skin-light"}`}>
-            About( )
           </NavLink>
 
           {/* Social Links */}
           <div className="flex space-x-6">
-            <a href="https://github.com/gitloper-azara" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-skin hover:text-gray-700">
+            <a href="https://github.com/gitloper-azara" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-skin hover:text-gray-700 dark:hover:text-white">
               <SiGithub size={24} />
             </a>
-            <a href="https://twitter.com/muqitazara" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-skin hover:text-gray-700">
+            <a href="https://twitter.com/muqitazara" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-skin hover:text-gray-700 dark:hover:text-white">
               <SiX size={24} />
             </a>
-            <a href="https://linkedin.com/in/yushahuazara" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-skin hover:text-gray-700">
+            <a href="https://linkedin.com/in/yushahuazara" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-skin hover:text-gray-700 dark:hover:text-white">
               <Linkedin size={24} />
             </a>
           </div>
@@ -51,7 +46,7 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
           <button
             type="button"
             onClick={toggleDarkMode}
-            className="bg-skin text-white px-4 py-2 rounded-lg focus:outline-none font-medium text-sm shadow-md">
+            className="bg-skin text-white px-4 py-2 rounded-lg focus:outline-none font-medium text-sm shadow-md hover:bg-skin-light hover:text-gray-700 dark:hover:bg-skin-dark">
             {darkMode ? <Sun size={20} /> : <Moon size={20} />}
           </button>
         </div>
@@ -96,13 +91,13 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
 
           {/* Social Links */}
           <div className="mt-4 flex justify-center space-x-6">
-            <a href="https://github.com/gitloper-azara" aria-label="GitHub" target="_blank" rel="noreferrer" className="text-skin hover:text-gray-700">
+            <a href="https://github.com/gitloper-azara" aria-label="GitHub" target="_blank" rel="noopener noreferrer" className="text-skin hover:text-gray-700">
               <SiGithub size={24} />
             </a>
-            <a href="https://twitter.com/muqitazara" aria-label="Twitter" target="_blank" rel="noreferrer" className="text-skin hover:text-gray-700">
+            <a href="https://twitter.com/muqitazara" aria-label="Twitter" target="_blank" rel="noopener noreferrer" className="text-skin hover:text-gray-700">
               <SiX size={24} />
             </a>
-            <a href="https://linkedin.com/in/yushahuazara" aria-label="LinkedIn" target="_blank" rel="noreferrer" className="text-skin hover:text-gray-700">
+            <a href="https://linkedin.com/in/yushahuazara" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className="text-skin hover:text-gray-700">
               <Linkedin size={24} />
             </a>
           </div>

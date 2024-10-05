@@ -4,12 +4,14 @@ import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
 import Blog from './pages/Blog';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 const App = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => window.localStorage.getItem('darkMode') === 'true');
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
+    window.localStorage.setItem('darkMode', !darkMode);
   }
 
   useEffect(() => {
@@ -29,6 +31,7 @@ const App = () => {
           <Route path='portfolio' element={<Portfolio darkMode={darkMode} />} />
           <Route path='blog' element={<Blog darkMode={darkMode} />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Prism from 'prismjs';
 import "prismjs/components/prism-python";
+import "prismjs/themes/prism-tomorrow.css"
 import { Linkedin } from "react-feather";
 import { SiGithub, SiX } from "react-icons/si";
 
@@ -69,20 +70,20 @@ const Home = ({ darkMode }) => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.2, delay: 0.7 }}
           >
-            <a href="https://github.com/gitloper-azara" target="_blank" rel="noreferrer" aria-label="GitHub" className="text-skin hover:text-gray-700">
+            <a href="https://github.com/gitloper-azara" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-skin hover:text-gray-700">
               <SiGithub size={24} />
             </a>
-            <a href="https://twitter.com/muqitazara" target="_blank" rel="noreferrer" aria-label="Twitter" className="text-skin hover:text-gray-700">
+            <a href="https://twitter.com/muqitazara" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-skin hover:text-gray-700">
               <SiX size={24} />
             </a>
-            <a href="https://linkedin.com/in/yushahuazara" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-skin hover:text-gray-700">
+            <a href="https://linkedin.com/in/yushahuazara" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-skin hover:text-gray-700">
               <Linkedin size={24} />
             </a>
           </motion.div>
 
           {/* custom python code block */}
           <div className="mt-12 p-6 rounded-lg shadow-lg items-center">
-            <pre className="text-left text-sm md:text-base text-gray-900 dark:text-white transition duration-500">
+            <pre className="overflow-auto text-left text-sm md:text-base transition duration-500">
               <code className="language-python">
                 {`
 class Developer():
