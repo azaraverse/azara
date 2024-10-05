@@ -7,7 +7,7 @@ const projects = [
 const Portfolio = () => {
   return (
     <div className="container mx-auto mt-8">
-      <h1 className="text-4xl font-bold text-center mt-20">
+      <h1 className="text-4xl font-bold text-center mt-20 pt-20">
         My Portfolio
       </h1>
 

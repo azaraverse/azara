@@ -11,14 +11,14 @@ const Home = ({ darkMode }) => {
   }, []);
 
   return (
-    <div className={`min-h-screen ${darkMode ? "bg-gray-900 text-white" : "bg-white text-black"} transition duration-500 pt-20`}>
+    <div className={`min-h-screen ${darkMode ? "bg-gray-900 text-white" : "bg-white text-black"} transition duration-500 pt-20 pr-10 pl-10`}>
       {/**Hero section */}
-      <div className="flex flex-col items-center justify-center h-screen">
-        <h1 className="text-4xl md:text-6xl font-bold mt-20 mb-6">
+      <div className="flex flex-col items-center justify-center min-h-screen">
+        <h1 className="text-4xl md:text-6xl font-bold mt-20 mb-6 text-center">
           Hello World, I go by <span className="text-skin">Azara</span>.
         </h1>
 
-        <p className="text-xl md:text-2xl mt-4 mb-8">
+        <p className="text-xl md:text-2xl mt-4 mb-8 text-center">
           A developer passionate about building anything with code blocks!
         </p>
 
@@ -32,16 +32,22 @@ const Home = ({ darkMode }) => {
         <div className="mt-12 p-6 rounded-lg shadow-lg">
           <pre className="text-left text-sm md:text-base text-gray-900 dark:text-white">
             <code className="language-python">
-              {`class Developer():
-      """ Dev model
-      """
-      def __init__(self: Self@Developer) -> None:
-      """ Initialize Dev class with default values
-      """
-      self.name = "Yushahu Yussif"
-      self.alias = "Azara"
-      self.skills = ["Python", "Django", "JavaScript", "React"]
-              `}
+{`class Developer():
+    """ Dev model
+    """
+    def __init__(self) -> None:
+    """ Initialize Dev class with default
+        values.
+    """
+    self.name = "Yushahu Yussif"
+    self.alias = "Azara"
+    self.skills = [
+        "Python",
+        "Django",
+        "JavaScript",
+        "React"
+    ]
+`}
             </code>
           </pre>
         </div>
