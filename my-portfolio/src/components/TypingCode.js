@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Prism from "prismjs";
 import "prismjs/components/prism-python";
 import "prismjs/themes/prism-tomorrow.css";
@@ -6,6 +6,7 @@ import "prismjs/themes/prism-tomorrow.css";
 const TypingCodeBlock = () => {
   const [displayedCode, setDisplayedCode] = useState("");
   const [isTypingComplete, setIsTypingComplete] = useState(false);
+  const codeRef = useRef(null);
 
   const code = `
   class Developer():
@@ -28,34 +29,40 @@ const TypingCodeBlock = () => {
           """ String representation of Dev Model
           """
           return self.name
-`;
+`.trim();
 
   useEffect(() => {
     // create a typing effect
+    let isMounted = true;
     let index = 0;
     const intervalId = setInterval(() => {
-      if (index < code.length) {
-        setDisplayedCode((prev) => prev + code[index]);
+      if (index < code.length && isMounted) {
+        setDisplayedCode(code.slice(0, index + 1));
         index += 1;
       } else {
         clearInterval(intervalId);
-        setIsTypingComplete(true);
+        if (isMounted) {
+          setIsTypingComplete(true);
+        }
       }
-    }, 8);
+    }, 10);
 
-    return () => clearInterval(intervalId); // cleanup on unmount
+    return () => {
+      isMounted = false;
+      clearInterval(intervalId);
+    }; // cleanup on unmount
   }, []);
 
   useEffect(() => {
-    if (isTypingComplete) {
-      Prism.highlightAll();
+    if (isTypingComplete && codeRef.current) {
+      Prism.highlightElement(codeRef.current);
     }
   }, [isTypingComplete]);
 
   return (
     <div className="mt-12 p-6 rounded-lg items-center">
       <pre className="text-left text-sm md:text-base text-gray-900 dark:text-white transition-colors duration-500">
-        <code className="language-python typed-code">{displayedCode}</code>
+        <code ref={codeRef} className="language-python typed-code">{displayedCode}</code>
       </pre>
     </div>
   )

@@ -47,7 +47,10 @@
     white-space: pre-wrap;
     overflow: hidden;
     border-right: 2px solid;
-    animation: typing 4s steps(40, end), blink 1s infinite step-end alternate;
+    animation:
+        typing 4s steps(40, end),
+        blink 0.7s infinite step-end alternate;
+    width: 100%;
 }
 
 @keyframes blink {
