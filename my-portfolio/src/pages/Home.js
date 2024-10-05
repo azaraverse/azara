@@ -43,7 +43,7 @@ const Home = ({ darkMode }) => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10">
+      <div className="relative">
         {/* Main content */}
         <main className="py-48 px-6">
           <h1 className="text-4xl font-extrabold mb-6 text-center">

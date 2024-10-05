@@ -36,13 +36,13 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
 
           {/* Social Links */}
           <div className="flex space-x-6">
-            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-skin hover:text-gray-700">
+            <a href="https://github.com/gitloper-azara" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-skin hover:text-gray-700">
               <SiGithub size={24} />
             </a>
-            <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-skin hover:text-gray-700">
+            <a href="https://twitter.com/muqitazara" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-skin hover:text-gray-700">
               <SiX size={24} />
             </a>
-            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-skin hover:text-gray-700">
+            <a href="https://linkedin.com/in/yushahuazara" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-skin hover:text-gray-700">
               <Linkedin size={24} />
             </a>
           </div>
@@ -96,13 +96,13 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
 
           {/* Social Links */}
           <div className="mt-4 flex justify-center space-x-6">
-            <a href="https://github.com/yourusername" aria-label="GitHub" target="_blank" rel="noreferrer" className="text-skin hover:text-gray-700">
+            <a href="https://github.com/gitloper-azara" aria-label="GitHub" target="_blank" rel="noreferrer" className="text-skin hover:text-gray-700">
               <SiGithub size={24} />
             </a>
-            <a href="https://twitter.com/yourusername" aria-label="Twitter" target="_blank" rel="noreferrer" className="text-skin hover:text-gray-700">
+            <a href="https://twitter.com/muqitazara" aria-label="Twitter" target="_blank" rel="noreferrer" className="text-skin hover:text-gray-700">
               <SiX size={24} />
             </a>
-            <a href="https://linkedin.com/in/yourusername" aria-label="LinkedIn" target="_blank" rel="noreferrer" className="text-skin hover:text-gray-700">
+            <a href="https://linkedin.com/in/yushahuazara" aria-label="LinkedIn" target="_blank" rel="noreferrer" className="text-skin hover:text-gray-700">
               <Linkedin size={24} />
             </a>
           </div>
@@ -110,9 +110,9 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
           {/* Dark mode toggle */}
           <div className="mt-4 flex justify-center">
             <button
-              className="bg-gray-700 text-white px-4 py-2 rounded-lg focus:outline-none font-medium text-sm"
+              className="bg-skin text-white px-4 py-2 rounded-lg focus:outline-none font-medium text-sm"
               onClick={toggleDarkMode}>
-              {darkMode ? <Sun /> : <Moon />}
+              {darkMode ? <Sun size={20} /> : <Moon size={20} />}
             </button>
           </div>
         </motion.div>
