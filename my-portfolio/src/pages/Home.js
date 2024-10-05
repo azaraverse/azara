@@ -40,7 +40,7 @@ const Home = ({ darkMode }) => {
       """
       self.name = "Yushahu Yussif"
       self.alias = "Azara"
-      self.skills = ["Python", "JavaScript", "Django", "React"]
+      self.skills = ["Python", "Django", "JavaScript", "React"]
               `}
             </code>
           </pre>

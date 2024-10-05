@@ -16,17 +16,17 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
         <div className="hidden md:flex items-center">
           <NavLink
             to='/portfolio'
-            className={({ isActive }) => `text-skin px-5 py-2 ${isActive ? "text-black hover:text-skin" : "hover:text-black"}`}>
-            portfolio_( )
+            className={({ isActive }) => `text-skin px-5 py-2 ${isActive ? "text-skin-light hover:text-skin" : "hover:text-skin-light"}`}>
+            Portfolio( )
           </NavLink>
           <NavLink
             to='/blog'
-            className={({ isActive }) => `text-skin px-5 py-2 ${isActive ? "text-black hover:text-skin" : "hover:text-black"}`}>
-            blog_( )
+            className={({ isActive }) => `text-skin px-5 py-2 ${isActive ? "text-skin-light hover:text-skin" : "hover:text-skin-light"}`}>
+            Blogs( )
           </NavLink>
 
           {/** Dark mode toggle */}
-          <button className="bg-skin text-white px-5 py-2 rounded-lg focus:outline-none" onClick={toggleDarkMode}>
+          <button className="bg-skin hover:bg-skin-light text-white px-5 py-2 rounded-lg focus:outline-none" onClick={toggleDarkMode}>
             {darkMode ? "Light Mode" : "Dark Mode"}
           </button>
         </div>
