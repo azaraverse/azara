@@ -1,53 +1,66 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ toggleDarkMode, darkMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow-md fixed w-full z-10 top-0 p-6">
+    <nav className={`fixed w-full z-10 top-0 p-6 ${darkMode ? "bg-gray-800 text-white" : "bg-white text-skin"} transition duration-500`}>
       <div className="container mx-auto flex justify-between items-center">
-
         {/** Logo */}
         <NavLink to='/' className="text-skin text-lg">
           azara_( )
         </NavLink>
 
         {/** Desktop NavLinks */}
-        <div className="hidden md:flex">
+        <div className="hidden md:flex items-center">
           <NavLink
             to='/portfolio'
-            className={({ isActive }) => `text-skin px-5 ${isActive ? "text-black hover:text-skin" : "hover:text-black"}`}>
+            className={({ isActive }) => `text-skin px-5 py-2 ${isActive ? "text-black hover:text-skin" : "hover:text-black"}`}>
             portfolio_( )
           </NavLink>
           <NavLink
             to='/blog'
-            className={({ isActive }) => `text-skin px-5 ${isActive ? "text-black hover:text-skin" : "hover:text-black"}`}>
+            className={({ isActive }) => `text-skin px-5 py-2 ${isActive ? "text-black hover:text-skin" : "hover:text-black"}`}>
             blog_( )
           </NavLink>
+
+          {/** Dark mode toggle */}
+          <button className="bg-skin text-white px-5 py-2 rounded-lg focus:outline-none" onClick={toggleDarkMode}>
+            {darkMode ? "Light Mode" : "Dark Mode"}
+          </button>
         </div>
         {/** Hamburger icon for mobile view */}
         <div className="md:hidden">
           <button className="text-skin focus:outline-none" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            <span>&#9776;</span>
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
           </button>
         </div>
       </div>
 
+
       {/** Mobile Menu */}
-      <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} bg-white rounded-lg shadow-lg transition-all duration-300 ease-in-out`}>
-        <NavLink
-          to='/portfolio'
-          /* close Menu on item click using setIsMenuOpen */
-          className="block text-skin py-2 px-6 hover:text-black" onClick={() => setIsMenuOpen(false)}>
-            portfolio_( )
-        </NavLink>
-        <NavLink
-          to='/blog'
-          className="block text-skin py-2 px-6 hover:text-black" onClick={() => setIsMenuOpen(false)}>
-            blog_( )
-        </NavLink>
-      </div>
+      {isMenuOpen && (
+        <div className="md:hidden mt4">
+          <NavLink
+            to='/portfolio'
+            /* close Menu on item click using setIsMenuOpen */
+            className="block text-skin py-2 px-6 hover:text-black" onClick={() => setIsMenuOpen(false)}>
+              portfolio_( )
+          </NavLink>
+          <NavLink
+            to='/blog'
+            className="block text-skin py-2 px-6 hover:text-black" onClick={() => setIsMenuOpen(false)}>
+              blog_( )
+          </NavLink>
+          {/** Dark mode toggle */}
+          <button className="bg-skin text-white px-5 py-2 rounded-lg focus:outline-none" onClick={toggleDarkMode}>
+            {darkMode ? "Light Mode" : "Dark Mode"}
+          </button>
+        </div>
+      )}
     </nav>
   )
 }
