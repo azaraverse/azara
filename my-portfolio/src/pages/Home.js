@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import Prism from 'prismjs';
-import "prismjs/components/prism-python";
-import "prismjs/themes/prism-tomorrow.css"
 import { Linkedin } from "react-feather";
 import { SiGithub, SiX } from "react-icons/si";
+import TypingCodeBlock from "../components/TypingCode";
 
 const Home = ({ darkMode }) => {
 
@@ -14,11 +12,6 @@ const Home = ({ darkMode }) => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // highlight code after rendering page
-  useEffect(() => {
-    Prism.highlightAll();
   }, []);
 
   return (
@@ -81,31 +74,7 @@ const Home = ({ darkMode }) => {
             </a>
           </motion.div>
 
-          {/* custom python code block */}
-          <div className="mt-12 p-6 rounded-lg shadow-lg items-center">
-            <pre className="overflow-auto text-left text-sm md:text-base transition duration-500">
-              <code className="language-python">
-                {`
-class Developer():
-      """ Dev Model
-      """
-
-      def __init__(self) -> None:
-          """ Initialise Dev model with default
-              values
-          """
-          self.name = "Yushahu Yussif"
-          self.alias = "Azara"
-          self.skills = [
-               "Python",
-               "Django",
-               "JavaScript",
-               "React"
-          ]
-`}
-              </code>
-            </pre>
-          </div>
+          <TypingCodeBlock />
         </main>
       </div>
     </div>

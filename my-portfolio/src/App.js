@@ -31,7 +31,7 @@ const App = () => {
           <Route path='portfolio' element={<Portfolio darkMode={darkMode} />} />
           <Route path='blog' element={<Blog darkMode={darkMode} />} />
         </Routes>
-        <Footer />
+        <Footer darkMode={darkMode} />
       </div>
     </Router>
   );

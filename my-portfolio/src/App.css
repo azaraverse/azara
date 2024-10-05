@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+.typed-code {
+    display: inline-block;
+    white-space: pre-wrap;
+    overflow: hidden;
+    border-right: 2px solid;
+    animation: typing 4s steps(40, end), blink 1s infinite step-end alternate;
+}
+
+@keyframes blink {
+    50% { border-color: transparent;}
+}
