@@ -1,0 +1,53 @@
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+
+const TypingEffect = () => {
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [displayedWord, setDisplayedWord] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [speed, setSpeed] = useState(150); // Speed for typing/deleting
+
+  // Handle typing and deleting effect
+  useEffect((words=["Code", "Python", "Django", "JavaScript", "React"]) => {
+    const currentWord = words[currentWordIndex];
+
+    if (!isDeleting && displayedWord === currentWord) {
+      // Word is fully typed, start deletion after a pause
+      setTimeout(() => setIsDeleting(true), 1500);
+    } else if (isDeleting && displayedWord === "") {
+      // Word is fully deleted, move to the next word
+      setIsDeleting(false);
+      setCurrentWordIndex((prev) => (prev + 1) % words.length); // Cycle through words
+    }
+
+    const handleTyping = setTimeout(() => {
+      if (!isDeleting) {
+        // Add a character for typing
+        setDisplayedWord(currentWord.slice(0, displayedWord.length + 1));
+        setSpeed(150); // Typing speed
+      } else {
+        // Remove a character for deleting
+        setDisplayedWord(currentWord.slice(0, displayedWord.length - 1));
+        setSpeed(150); // Deletion speed
+      }
+    }, speed);
+
+    return () => clearTimeout(handleTyping);
+  }, [speed, displayedWord, isDeleting, currentWordIndex]);
+
+  return (
+    <motion.p
+      className="text-center max-w-lg mx-auto mb-8"
+      initial={{ y: -30, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.4, delay: 0.4 }}
+    >
+      I am a developer with experience in{" "}
+      <span className="text-skin">backend</span> and{" "}
+      <span className="text-skin">frontend</span> technologies, focused on
+      building experiences with <span className="text-skin font-mono">{displayedWord}</span>.
+    </motion.p>
+  );
+};
+
+export default TypingEffect;

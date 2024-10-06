@@ -13,34 +13,34 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         {/* Logo */}
         <NavLink to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <span className="self-center font-semibold text-skin whitespace-nowrap">azara_( )</span>
+          <span className="self-center font-semibold text-blue-700 dark:text-blue-400 transition-colors duration-500 whitespace-nowrap">azara_( )</span>
         </NavLink>
 
         {/* Desktop NavLinks */}
         <div className="hidden md:flex items-center space-x-6">
           <NavLink
             to="/portfolio"
-            className={({ isActive }) => `font-semibold text-skin px-5 py-2 ${isActive ? "text-skin hover:text-gray-700" : "hover:text-gray-700 dark:hover:text-white"}`}>
+            className={({ isActive }) => `font-semibold text-blue-700 dark:text-blue-400 transition-colors duration-500 px-5 py-2 ${isActive ? "text-skin hover:text-gray-700" : "hover:text-gray-700 dark:hover:text-white"}`}>
             Portfolio( )
           </NavLink>
           <NavLink
             to="/blog"
-            className={({ isActive }) => `font-semibold text-skin px-5 py-2 ${isActive ? "text-skin hover:text-gray-700" : "hover:text-gray-700 dark:hover:text-white"}`}>
+            className={({ isActive }) => `font-semibold text-blue-700 dark:text-blue-400 transition-colors duration-500 px-5 py-2 ${isActive ? "text-skin hover:text-gray-700" : "hover:text-gray-700 dark:hover:text-white"}`}>
             Blogs( )
           </NavLink>
 
           {/* Social Links */}
           <div className="flex space-x-6">
-            <a href="https://github.com/gitloper-azara" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-skin hover:text-gray-700 dark:hover:text-white">
+            <a href="https://github.com/gitloper-azara" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-blue-700 dark:text-blue-400 transition-colors duration-500 hover:text-gray-700 dark:hover:text-white">
               <SiGithub size={24} />
             </a>
-            <a href="https://twitter.com/muqitazara" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-skin hover:text-gray-700 dark:hover:text-white">
+            <a href="https://twitter.com/muqitazara" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-blue-700 dark:text-blue-400 transition-colors duration-500 hover:text-gray-700 dark:hover:text-white">
               <SiX size={24} />
             </a>
-            <a href="https://linkedin.com/in/yushahuazara" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-skin hover:text-gray-700 dark:hover:text-white">
+            <a href="https://linkedin.com/in/yushahuazara" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-blue-700 dark:text-blue-400 transition-colors duration-500 hover:text-gray-700 dark:hover:text-white">
               <Linkedin size={24} />
             </a>
-            <a href="https://www.facebook.com/yushahuazara/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-skin hover:text-gray-700 dark:hover:text-white">
+            <a href="https://www.facebook.com/yushahuazara/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-blue-700 dark:text-blue-400 transition-colors duration-500 hover:text-gray-700 dark:hover:text-white">
               <SiFacebook size={24} />
             </a>
           </div>
@@ -49,7 +49,7 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
           <button
             type="button"
             onClick={toggleDarkMode}
-            className="bg-skin text-white px-4 py-2 rounded-lg focus:outline-none font-medium text-sm shadow-md hover:bg-skin-light hover:text-gray-700 dark:hover:bg-skin-dark">
+            className="bg-blue-700 dark:bg-blue-400 text-white px-4 py-2 rounded-lg focus:outline-none font-medium text-sm shadow-md hover:bg-blue-400 hover:text-white dark:hover:bg-blue-700">
             {darkMode ? <Sun size={20} /> : <Moon size={20} />}
           </button>
         </div>
@@ -57,7 +57,7 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
         {/* Hamburger icon for mobile view */}
         <div className="md:hidden">
           <button
-            className="text-skin focus:outline-none"
+            className="text-blue-700 dark:text-blue-400 focus:outline-none"
             onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
@@ -75,32 +75,32 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
           transition={{ duration: 0.5 }}>
           <NavLink
             to="/portfolio"
-            className="block py-2 px-6 text-skin hover:bg-gray-100 rounded"
+            className="block py-2 px-6 text-blue-700 dark:text-blue-400 transition-colors duration-500 hover:bg-gray-100 rounded"
             onClick={() => setIsMenuOpen(false)}>
             Portfolio( )
           </NavLink>
           <NavLink
             to="/blog"
-            className="block py-2 px-6 text-skin hover:bg-gray-100 rounded"
+            className="block py-2 px-6 text-blue-700 dark:text-blue-400 transition-colors duration-500 hover:bg-gray-100 rounded"
             onClick={() => setIsMenuOpen(false)}>
             Blogs( )
           </NavLink>
           <NavLink
             to="/about"
-            className="block py-2 px-6 text-skin hover:bg-gray-100 rounded"
+            className="block py-2 px-6 text-blue-700 dark:text-blue-400 transition-colors duration-500 hover:bg-gray-100 rounded"
             onClick={() => setIsMenuOpen(false)}>
             About( )
           </NavLink>
 
           {/* Social Links */}
           <div className="mt-4 flex justify-center space-x-6">
-            <a href="https://github.com/gitloper-azara" aria-label="GitHub" target="_blank" rel="noopener noreferrer" className="text-skin hover:text-gray-700">
+            <a href="https://github.com/gitloper-azara" aria-label="GitHub" target="_blank" rel="noopener noreferrer" className="text-blue-700 dark:text-blue-400 transition-colors duration-500 hover:text-gray-700">
               <SiGithub size={24} />
             </a>
-            <a href="https://twitter.com/muqitazara" aria-label="Twitter" target="_blank" rel="noopener noreferrer" className="text-skin hover:text-gray-700">
+            <a href="https://twitter.com/muqitazara" aria-label="Twitter" target="_blank" rel="noopener noreferrer" className="text-blue-700 dark:text-blue-400 transition-colors duration-500 hover:text-gray-700">
               <SiX size={24} />
             </a>
-            <a href="https://linkedin.com/in/yushahuazara" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className="text-skin hover:text-gray-700">
+            <a href="https://linkedin.com/in/yushahuazara" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className="text-blue-700 dark:text-blue-400 transition-colors duration-500 hover:text-gray-700">
               <Linkedin size={24} />
             </a>
           </div>
@@ -108,7 +108,7 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
           {/* Dark mode toggle */}
           <div className="mt-4 flex justify-center">
             <button
-              className="bg-skin text-white px-4 py-2 rounded-lg focus:outline-none font-medium text-sm"
+              className="bg-blue-700 dark:bg-blue-400 text-white px-4 py-2 rounded-lg focus:outline-none font-medium text-sm"
               onClick={toggleDarkMode}>
               {darkMode ? <Sun size={20} /> : <Moon size={20} />}
             </button>

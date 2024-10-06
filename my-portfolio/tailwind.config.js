@@ -14,6 +14,10 @@ module.exports = {
             }
         }
     },
+    fontFamily: {
+        'mono': ['"Roboto Mono"', '"IBM Plex Mono"'],
+        'sans': ['Poppins'],
+    }
   },
   plugins: [],
 }

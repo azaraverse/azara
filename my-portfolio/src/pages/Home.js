@@ -3,9 +3,11 @@ import { motion } from "framer-motion";
 import { Linkedin } from "react-feather";
 import { SiGithub, SiX, SiFacebook } from "react-icons/si";
 import TypingCodeBlock from "../components/TypingCode";
+import TypingEffect from "../components/TypeWords";
 
 const Home = ({ darkMode }) => {
 
+  // eslint-disable-next-line
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -47,15 +49,9 @@ const Home = ({ darkMode }) => {
           >
             Hi! I am <span className="text-skin">Azara</span>.
           </motion.h1>
-          <motion.p
-            className="text-center max-w-lg mx-auto mb-8"
-            initial={{ y: -30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.4 }}
-          >
-            I am a developer with experience in <span className="text-skin">backend</span> and <span className="text-skin">frontend</span> technologies,
-            focused on building experiences with code.
-          </motion.p>
+
+          <TypingEffect />
+
           {/* Social Links */}
           <motion.div
             className="mt-6 flex justify-center space-x-6"

@@ -1,35 +1,32 @@
-import React, { useEffect, useState, useRef } from "react";
-import Prism from "prismjs";
-import "prismjs/components/prism-python";
-import "prismjs/themes/prism-tomorrow.css";
+import React, { useEffect, useState } from "react";
+import MonacoEditor from "@monaco-editor/react";
 
 const TypingCodeBlock = () => {
   const [displayedCode, setDisplayedCode] = useState("");
-  const [isTypingComplete, setIsTypingComplete] = useState(false);
-  const codeRef = useRef(null);
+  const [,setIsTypingComplete] = useState(false);
 
-  const code = `
-  class Developer():
-      """ Dev Model
-      """
+  const code =
+`class Developer():
+    """ Dev Model
+    """
 
-      def __init__(self) -> None:
-          """ Initialise Dev Model with default values
-          """
-          self.name = "Yushahu Yussif"
-          self.alias = "Azara"
-          self.skills = [
-              "Python",
-              "Django",
-              "JavaScript",
-              "React"
-          ]
+    def __init__(self) -> None:
+        """ Initialise Dev Model with default values
+        """
+        self.name = "Yushahu Yussif"
+        self.alias = "Azara"
+        self.skills = [
+            "Python",
+            "Django",
+            "JavaScript",
+            "React"
+        ]
 
-      def __str__(self) -> str:
-          """ String representation of Dev Model
-          """
-          return self.name
-`.trim();
+    def __str__(self) -> str:
+        """ String representation of Dev Model
+        """
+        return self.name
+`;
 
   useEffect(() => {
     // create a typing effect
@@ -51,19 +48,24 @@ const TypingCodeBlock = () => {
       isMounted = false;
       clearInterval(intervalId);
     }; // cleanup on unmount
-  }, []);
-
-  useEffect(() => {
-    if (isTypingComplete && codeRef.current) {
-      Prism.highlightElement(codeRef.current);
-    }
-  }, [isTypingComplete]);
+  }, [code]);
 
   return (
     <div className="mt-12 p-6 rounded-lg items-center">
-      <pre className="text-left text-sm md:text-base text-gray-900 dark:text-white transition-colors duration-500">
-        <code ref={codeRef} className="language-python typed-code">{displayedCode}</code>
-      </pre>
+      <MonacoEditor
+        height="400px"
+        language="python"
+        theme="vs-dark"
+        value={displayedCode}
+        options={{
+          readOnly: true,
+          automaticLayout: true,
+          wordWrap: "off",
+          minimap: { enabled: true },
+          scrollBeyondLastLine: false,
+          padding: { top: 20, bottom: 0 }
+        }}
+      />
     </div>
   )
 }
