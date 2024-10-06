@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Linkedin } from "react-feather";
 import { SiGithub, SiX, SiFacebook } from "react-icons/si";
-import TypingCodeBlock from "../components/TypingCode";
-import TypingEffect from "../components/TypeWords";
+import TypingCodeBlock from "../helpers/TypingCode";
+import TypingEffect from "../helpers/TypeWords";
+import BlogsList from "../components/blogSection";
 
 const Home = ({ darkMode }) => {
 
@@ -74,6 +75,8 @@ const Home = ({ darkMode }) => {
           </motion.div>
 
           <TypingCodeBlock darkMode={darkMode} />
+
+          <BlogsList />
         </main>
       </div>
     </div>
