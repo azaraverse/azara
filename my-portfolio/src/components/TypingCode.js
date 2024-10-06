@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import MonacoEditor from "@monaco-editor/react";
 
-const TypingCodeBlock = () => {
+const TypingCodeBlock = ( {darkMode} ) => {
   const [displayedCode, setDisplayedCode] = useState("");
   const [,setIsTypingComplete] = useState(false);
 
@@ -55,7 +55,7 @@ const TypingCodeBlock = () => {
       <MonacoEditor
         height="400px"
         language="python"
-        theme="vs-dark"
+        theme={`${darkMode ? "vs-dark": "vs-light"}`}
         value={displayedCode}
         options={{
           readOnly: true,

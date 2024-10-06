@@ -17,7 +17,7 @@ const Home = ({ darkMode }) => {
   }, []);
 
   return (
-    <div className={`min-h-screen ${darkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-900"} transition-colors duration-500`}>
+    <div className={`min-h-screen ${darkMode ? "bg-neutral-900 text-white" : "bg-gray-100 text-gray-900"} transition-colors duration-500`}>
       {/* Animated background */}
       <div className="fixed inset-0 z-0 overflow-hidden">
         <motion.div
@@ -47,7 +47,7 @@ const Home = ({ darkMode }) => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-            Hi! I am <span className="text-skin">Azara</span>.
+            Hi! I am <span className="text-blue-700 dark:text-blue-400 transition-colors duration-500">Azara</span>.
           </motion.h1>
 
           <TypingEffect />
@@ -59,21 +59,21 @@ const Home = ({ darkMode }) => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.2, delay: 0.7 }}
           >
-            <a href="https://github.com/gitloper-azara" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-skin hover:text-gray-700 dark:hover:text-white">
+            <a href="https://github.com/gitloper-azara" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-blue-700 dark:text-blue-400 transition-colors duration-500 hover:text-gray-700 dark:hover:text-white">
               <SiGithub size={24} />
             </a>
-            <a href="https://twitter.com/muqitazara" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-skin hover:text-gray-700 dark:hover:text-white">
+            <a href="https://twitter.com/muqitazara" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-blue-700 dark:text-blue-400 transition-colors duration-500 hover:text-gray-700 dark:hover:text-white">
               <SiX size={24} />
             </a>
-            <a href="https://linkedin.com/in/yushahuazara" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-skin hover:text-gray-700 dark:hover:text-white">
+            <a href="https://linkedin.com/in/yushahuazara" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-blue-700 dark:text-blue-400 transition-colors duration-500 hover:text-gray-700 dark:hover:text-white">
               <Linkedin size={24} />
             </a>
-            <a href="https://www.facebook.com/yushahuazara/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-skin hover:text-gray-700 dark:hover:text-white">
+            <a href="https://www.facebook.com/yushahuazara/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-blue-700 dark:text-blue-400 transition-colors duration-500 hover:text-gray-700 dark:hover:text-white">
               <SiFacebook size={24} />
             </a>
           </motion.div>
 
-          <TypingCodeBlock />
+          <TypingCodeBlock darkMode={darkMode} />
         </main>
       </div>
     </div>

@@ -43,9 +43,9 @@ const TypingEffect = () => {
       transition={{ duration: 0.4, delay: 0.4 }}
     >
       I am a developer with experience in{" "}
-      <span className="text-skin">backend</span> and{" "}
-      <span className="text-skin">frontend</span> technologies, focused on
-      building experiences with <span className="text-skin font-mono">{displayedWord}</span>.
+      <span className="text-blue-700 dark:text-blue-400 transition-colors duration-500">backend</span> and{" "}
+      <span className="text-blue-700 dark:text-blue-400 transition-colors duration-500">frontend</span> technologies, focused on
+      building experiences with <span className="text-blue-700 dark:text-blue-400 transition-colors duration-500 font-mono">{displayedWord}</span>.
     </motion.p>
   );
 };

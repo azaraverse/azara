@@ -4,16 +4,18 @@ import { Sun, Moon } from "lucide-react";
 import { SiGithub, SiX, SiFacebook } from "react-icons/si";
 import { Linkedin } from "react-feather";
 import { motion } from "framer-motion";
+import { ReactComponent as BrandLogo } from "../assets/brand-logo.svg";
 
 const Navbar = ({ toggleDarkMode, darkMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className={`fixed w-full z-10 top-0 p-4 shadow-md ${darkMode ? "bg-gray-800 text-white" : "bg-white text-gray-900"} transition-colors duration-500`}>
+    <nav className={`fixed w-full z-10 top-0 p-4 shadow-md ${darkMode ? "bg-neutral-800 text-white" : "bg-white text-gray-900"} transition-colors duration-500`}>
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         {/* Logo */}
         <NavLink to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <span className="self-center font-semibold text-blue-700 dark:text-blue-400 transition-colors duration-500 whitespace-nowrap">azara_( )</span>
+          <BrandLogo className="w-20 h-auto self-center text-blue-700 dark:text-blue-400 transition-colors duration-500 whitespace-nowrap"
+            style={{ fill: 'currentcolor' }} />
         </NavLink>
 
         {/* Desktop NavLinks */}
@@ -85,12 +87,6 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
             onClick={() => setIsMenuOpen(false)}>
             Blogs( )
           </NavLink>
-          <NavLink
-            to="/about"
-            className="block py-2 px-6 text-blue-700 dark:text-blue-400 transition-colors duration-500 hover:bg-gray-100 rounded"
-            onClick={() => setIsMenuOpen(false)}>
-            About( )
-          </NavLink>
 
           {/* Social Links */}
           <div className="mt-4 flex justify-center space-x-6">
@@ -102,6 +98,9 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
             </a>
             <a href="https://linkedin.com/in/yushahuazara" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className="text-blue-700 dark:text-blue-400 transition-colors duration-500 hover:text-gray-700">
               <Linkedin size={24} />
+            </a>
+            <a href="https://www.facebook.com/yushahuazara/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-blue-700 dark:text-blue-400 transition-colors duration-500 hover:text-gray-700 dark:hover:text-white">
+              <SiFacebook size={24} />
             </a>
           </div>
 
