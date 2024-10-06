@@ -1,3 +1,7 @@
+import firstBlogImg from "../assets/images/pexels-first-blog.jpg";
+import reactBlogImg from "../assets/images/pexels-react.jpg";
+import seoBlogImg from "../assets/images/pexels-seo.jpg";
+
 const blogs = [
   {
     slug: "first blog on dev",
@@ -5,7 +9,7 @@ const blogs = [
     date: "2024-10-07",
     category: "Software Engineering",
     author: "Yushahu Yussif Azara",
-    cover_image: ""
+    cover_image: firstBlogImg
   },
   {
     slug: "react app creation",
@@ -13,7 +17,7 @@ const blogs = [
     date: "2024-10-06",
     category: "React",
     author: "Yushahu Yussif Azara",
-    cover_image: ""
+    cover_image: reactBlogImg
   },
   {
     slug: "seo-optimisation",
@@ -21,7 +25,7 @@ const blogs = [
     date: "2024-10-05",
     category: "SEO",
     author: "Yushahu Yussif Azara",
-    cover_image: ""
+    cover_image: seoBlogImg
   },
 ]
 
