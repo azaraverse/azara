@@ -10,18 +10,18 @@ const BlogsList = () => {
           From My Thoughts
         </h2>
         <p className="text-base sm:text-lg mb-8 sm:mb-12 text-center">
-          Read my thoughts, as and when they come...
+          Sharing my thoughts and lessons on <span className="text-blue-700 dark:text-blue-400 font-mono">Dev</span>
         </p>
 
-        <div className="grid gap-10 lg:gap-12">
+        <div className="grid grid-cols-2 gap-8 lg:gap-12">
           {blogs.map((blog) => (
             <div
               key={blog.slug}
-              className="flex flex-col lg:flex-row items-center lg:space-x-6 space-y-4 lg:space-y-0">
+              className="flex flex-col lg:flex-row items-center lg:space-x-6 space-y-6 lg:space-y-8">
               <img
                 src={blog.cover_image}
                 alt={blog.title}
-                className="lg:w-40 h-auto lg:h-40 aspect-w-1 aspect-h-1 object-cover rounded-lg" />
+                className="lg:w-40 h-auto lg:h-40 md:aspect-w-1 md:aspect-h-1 object-cover rounded-lg" />
 
               <div>
                 <div className="text-sm lg:text-left text-gray-500 dark:text-gray-300 transition-colors duration-500">{blog.date} &#124; {blog.category}</div>
