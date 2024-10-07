@@ -5,8 +5,6 @@ import fm from "front-matter";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 
-import authorImage from "../assets/images/pexels-first-blog.jpg";
-
 const BlogPost = () => {
   const { slug } = useParams();
   const [content, setContent] = useState("");
@@ -27,7 +25,7 @@ const BlogPost = () => {
   }, [slug]);
 
   return (
-    <div className="container mx-auto px-8 py-20 mt-10 dark:bg-neutral-900 dark:text-white transition-colors duration-500">
+    <div className="w-full px-8 py-20 lg:px-80 mt-10 lg:ml-0 lg:mr-0 dark:bg-neutral-900 dark:text-white transition-colors duration-500">
       {metadata && (
         <>
           <Helmet>
@@ -45,7 +43,7 @@ const BlogPost = () => {
               <div className="flex items-center mb-6">
                 {metadata.author.image && (
                   <img
-                  src={authorImage}
+                  src={metadata.author.image}
                   alt={metadata.author.name}
                   className="w-10 h-10 rounded-full" />
                 )}
@@ -54,7 +52,15 @@ const BlogPost = () => {
                   </div>
               </div>
             )}
-            <ReactMarkdown>{content}</ReactMarkdown>
+            {metadata.cover_image && (
+              <div className="mb-6 lg:mb-10">
+                <img
+                  src={metadata.cover_image}
+                  alt={metadata.title}
+                  className="mx-auto rounded-lg h-auto lg:w-auto w-3/4 lg:w-3/4 max-h-[500px] object-cover shadow-lg" />
+              </div>
+            )}
+            <ReactMarkdown className="prose dark:prose-invert">{content}</ReactMarkdown>
           </motion.div>
         </>
       )}
