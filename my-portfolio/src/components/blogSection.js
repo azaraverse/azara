@@ -1,11 +1,41 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import blogs from "../blogs/blogList";
+import { motion } from "framer-motion";
 
 const BlogsList = () => {
+  // Animation variants for framer-motion
+  const containerVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        staggerChildren: 0.8, // effects delay between child animations
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5
+      },
+    },
+  };
+
   return (
     <section className="bg-white dark:bg-neutral-800 p-6 sm:p-8 lg:p-12 mt-10 mb-10 lg:mb-20 lg:mt-20 rounded-lg transition-colors duration-500">
-      <div className="container mx-auto">
+      <motion.div
+        className="container mx-auto"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <h2 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6 lg:mb-8 text-center">
           From My Thoughts
         </h2>
@@ -13,10 +43,17 @@ const BlogsList = () => {
           Sharing my thoughts and lessons on <span className="text-blue-700 dark:text-blue-400 font-mono">Dev</span>
         </p>
 
-        <div className="grid grid-cols-2 gap-8 lg:gap-12">
+        <motion.div
+          className="grid grid-cols-2 gap-8 lg:gap-12"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.4 }}
+        >
           {blogs.map((blog) => (
-            <div
+            <motion.div
               key={blog.slug}
+              variants={itemVariants}
               className="flex flex-col lg:flex-row items-center lg:space-x-6 space-y-6 lg:space-y-8">
               <img
                 src={blog.cover_image}
@@ -30,10 +67,10 @@ const BlogsList = () => {
                 </Link>
                 <p className="mt-1 sm:mt-2 text-gray-600 dark:text-gray-300 transition-colors duration-500 text-sm">{blog.author}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

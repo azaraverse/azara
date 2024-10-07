@@ -23,12 +23,12 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
           <NavLink
             to="/portfolio"
             className={({ isActive }) => `font-semibold text-blue-700 dark:text-blue-400 transition-colors duration-500 px-5 py-2 ${isActive ? "text-skin hover:text-gray-700" : "hover:text-gray-700 dark:hover:text-white"}`}>
-            Portfolio( )
+            <span className="font-mono">Portfolio()</span>
           </NavLink>
           <NavLink
             to="/blog"
             className={({ isActive }) => `font-semibold text-blue-700 dark:text-blue-400 transition-colors duration-500 px-5 py-2 ${isActive ? "text-skin hover:text-gray-700" : "hover:text-gray-700 dark:hover:text-white"}`}>
-            Blogs( )
+            <span className="font-mono">Blogs()</span>
           </NavLink>
 
           {/* Social Links */}
@@ -79,13 +79,13 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
             to="/portfolio"
             className="block py-2 px-6 text-blue-700 dark:text-blue-400 transition-colors duration-500 hover:bg-gray-100 rounded"
             onClick={() => setIsMenuOpen(false)}>
-            Portfolio( )
+            <span className="font-mono">Portfolio()</span>
           </NavLink>
           <NavLink
             to="/blog"
             className="block py-2 px-6 text-blue-700 dark:text-blue-400 transition-colors duration-500 hover:bg-gray-100 rounded"
             onClick={() => setIsMenuOpen(false)}>
-            Blogs( )
+            <span className="font-mono">Blogs()</span>
           </NavLink>
 
           {/* Social Links */}
