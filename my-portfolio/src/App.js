@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
 import Blog from './pages/Blog';
+import BlogPost from './components/fetchBlog';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
@@ -29,7 +30,8 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Home darkMode={darkMode} />} />
           <Route path='portfolio' element={<Portfolio darkMode={darkMode} />} />
-          <Route path='blog' element={<Blog darkMode={darkMode} />} />
+          <Route path='blogs' element={<Blog darkMode={darkMode} />} />
+          <Route path='blog/:slug' element={<BlogPost darkMode={darkMode} />} />
         </Routes>
         <Footer darkMode={darkMode} />
       </div>

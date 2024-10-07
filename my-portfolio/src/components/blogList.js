@@ -4,11 +4,14 @@ import seoBlogImg from "../assets/images/pexels-seo.jpg";
 
 const blogs = [
   {
-    slug: "first blog on dev",
+    slug: "first-blog-on-dev",
     title: "First Ever Blog",
     date: "2024-10-07",
     category: "Software Engineering",
-    author: "Yushahu Yussif Azara",
+    author: {
+        name: "Yushahu Yussif Azara",
+        image: firstBlogImg
+    },
     cover_image: firstBlogImg
   },
   {
@@ -16,7 +19,10 @@ const blogs = [
     title: "Building my First React App",
     date: "2024-10-06",
     category: "React",
-    author: "Yushahu Yussif Azara",
+    author: {
+        name: "Yushahu Yussif Azara",
+        image: reactBlogImg
+    },
     cover_image: reactBlogImg
   },
   {
@@ -24,7 +30,10 @@ const blogs = [
     title: "How to use SEO to drive traffic",
     date: "2024-10-05",
     category: "SEO",
-    author: "Yushahu Yussif Azara",
+    author: {
+        name: "Yushahu Yussif Azara",
+        image: seoBlogImg
+    },
     cover_image: seoBlogImg
   },
 ]

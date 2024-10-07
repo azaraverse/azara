@@ -22,12 +22,12 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
         <div className="hidden md:flex items-center space-x-6">
           <NavLink
             to="/portfolio"
-            className={({ isActive }) => `font-semibold text-blue-700 dark:text-blue-400 transition-colors duration-500 px-5 py-2 ${isActive ? "text-skin hover:text-gray-700" : "hover:text-gray-700 dark:hover:text-white"}`}>
+            className={({ isActive }) => `font-semibold text-blue-700 dark:text-blue-400 transition-colors duration-500 px-5 py-2 ${isActive ? "text-blue-700 underline decoration-double hover:text-gray-700" : "hover:text-gray-700 dark:hover:text-white"}`}>
             <span className="font-mono">Portfolio()</span>
           </NavLink>
           <NavLink
-            to="/blog"
-            className={({ isActive }) => `font-semibold text-blue-700 dark:text-blue-400 transition-colors duration-500 px-5 py-2 ${isActive ? "text-skin hover:text-gray-700" : "hover:text-gray-700 dark:hover:text-white"}`}>
+            to="/blogs"
+            className={({ isActive }) => `font-semibold text-blue-700 dark:text-blue-400 transition-colors duration-500 px-5 py-2 ${isActive ? "text-blue-700 underline decoration-double hover:text-gray-700" : "hover:text-gray-700 dark:hover:text-white"}`}>
             <span className="font-mono">Blogs()</span>
           </NavLink>
 
@@ -82,7 +82,7 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
             <span className="font-mono">Portfolio()</span>
           </NavLink>
           <NavLink
-            to="/blog"
+            to="/blogs"
             className="block py-2 px-6 text-blue-700 dark:text-blue-400 transition-colors duration-500 hover:bg-gray-100 rounded"
             onClick={() => setIsMenuOpen(false)}>
             <span className="font-mono">Blogs()</span>

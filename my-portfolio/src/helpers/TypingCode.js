@@ -6,7 +6,12 @@ const TypingCodeBlock = ( {darkMode} ) => {
   const [,setIsTypingComplete] = useState(false);
 
   const code =
-`class Developer():
+`#!/usr/bin/env python3
+""" Personal Dev Module
+"""
+
+
+class Developer():
     """ Dev Model
     """
 

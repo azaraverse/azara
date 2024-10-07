@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import blogs from "../blogs/blogList";
+import blogs from "./blogList";
 import { motion } from "framer-motion";
 
 const BlogsList = () => {
@@ -44,7 +44,7 @@ const BlogsList = () => {
         </p>
 
         <motion.div
-          className="grid grid-cols-2 gap-8 lg:gap-12"
+          className="grid grid-cols-2 gap-10 lg:gap-12"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -54,18 +54,18 @@ const BlogsList = () => {
             <motion.div
               key={blog.slug}
               variants={itemVariants}
-              className="flex flex-col lg:flex-row items-center lg:space-x-6 space-y-6 lg:space-y-8">
+              className="flex flex-col lg:flex-row lg:space-x-6 space-y-6 lg:space-y-8">
               <img
                 src={blog.cover_image}
                 alt={blog.title}
                 className="lg:w-40 h-auto lg:h-40 md:aspect-w-1 md:aspect-h-1 object-cover rounded-lg" />
 
               <div>
-                <div className="text-sm lg:text-left text-gray-500 dark:text-gray-300 transition-colors duration-500">{blog.date} &#124; {blog.category}</div>
+                <div className="text-sm text-left text-gray-500 dark:text-gray-300 transition-colors duration-500">{blog.date} &#124; {blog.category}</div>
                 <Link to={`/blog/${blog.slug}`}>
                   <h3 className="text-left text-lg sm:text-xl font-semibold dark:text-white hover:text-blue-700">{blog.title}</h3>
                 </Link>
-                <p className="mt-1 sm:mt-2 text-gray-600 dark:text-gray-300 transition-colors duration-500 text-sm">{blog.author}</p>
+                <p className="text-left mt-1 sm:mt-2 text-gray-600 dark:text-gray-300 transition-colors duration-500 text-sm">{blog.author.name}</p>
               </div>
             </motion.div>
           ))}
