@@ -78,13 +78,13 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
           <NavLink
             to="/portfolio"
             className="block py-2 px-6 text-blue-700 dark:text-blue-400 transition-colors duration-500 hover:bg-gray-100 rounded"
-            onClick={() => setIsMenuOpen(false)}>
+            onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <span className="font-mono">Portfolio()</span>
           </NavLink>
           <NavLink
             to="/blogs"
             className="block py-2 px-6 text-blue-700 dark:text-blue-400 transition-colors duration-500 hover:bg-gray-100 rounded"
-            onClick={() => setIsMenuOpen(false)}>
+            onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <span className="font-mono">Blogs()</span>
           </NavLink>
 
@@ -108,7 +108,10 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
           <div className="mt-4 flex justify-center">
             <button
               className="bg-blue-700 dark:bg-blue-400 text-white mb-4 px-4 py-2 rounded-lg focus:outline-none font-medium text-sm"
-              onClick={toggleDarkMode}>
+              onClick={() => {
+                toggleDarkMode();
+                setIsMenuOpen(!isMenuOpen);
+              }}>
               {darkMode ? <Sun size={20} /> : <Moon size={20} />}
             </button>
           </div>
