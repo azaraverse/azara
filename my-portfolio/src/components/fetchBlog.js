@@ -45,7 +45,7 @@ const BlogPost = () => {
                   <img
                   src={metadata.author.image}
                   alt={metadata.author.name}
-                  className="w-10 h-10 rounded-full" />
+                  className="w-10 h-10 rounded-2xl" />
                 )}
                   <div className="ml-4">
                     <p className="text-sm font-semibold text-gray-300">{metadata.author.name}</p>
@@ -60,7 +60,7 @@ const BlogPost = () => {
                   className="mx-auto rounded-lg h-auto lg:w-auto w-3/4 lg:w-3/4 max-h-[500px] object-cover shadow-lg" />
               </div>
             )}
-            <ReactMarkdown className="prose dark:prose-invert">{content}</ReactMarkdown>
+            <ReactMarkdown className="prose dark:prose-invert pt-10 lg:pt-20">{content}</ReactMarkdown>
           </motion.div>
         </>
       )}

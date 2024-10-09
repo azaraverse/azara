@@ -15,7 +15,7 @@ const blogs = [
     cover_image: firstBlogImg
   },
   {
-    slug: "react app creation",
+    slug: "react-app-creation",
     title: "Building my First React App",
     date: "2024-10-06",
     category: "React",

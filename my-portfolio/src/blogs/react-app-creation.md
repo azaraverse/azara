@@ -1,12 +1,12 @@
 ---
-slug: "first-blog-on-dev"
-title: "First Ever Blog"
-date: "2024-10-07"
-category: "Software Engineering"
+slug: "react-app-creation"
+title: "Building my First React App"
+date: "2024-10-06"
+category: "React"
 author:
     name: "Yushahu Yussif Azara"
     image: "/blog_images/IMG_1519_Copy.jpg"
-cover_image: "/blog_images/pexels-first-blog.jpg"
+cover_image: "/blog_images/pexels-react.jpg"
 ---
 
 Lorem ipsum odor amet, consectetuer adipiscing elit. Efficitur amet ac vehicula porta rutrum in efficitur commodo venenatis. Mi cubilia id aptent penatibus sociosqu dapibus. Quisque congue eros dictum, commodo penatibus amet. Dui bibendum congue quam praesent nisl. Venenatis ligula torquent aenean, conubia auctor vivamus himenaeos nullam. Proin ut bibendum mattis purus integer ut. Tincidunt sociosqu bibendum per, rhoncus vestibulum proin quam libero. Etiam sem bibendum dis rutrum magna. Cras sociosqu magnis pellentesque feugiat libero et hac.

@@ -28,7 +28,7 @@ const BlogsList = () => {
   };
 
   return (
-    <section className="bg-white dark:bg-neutral-800 p-6 sm:p-8 lg:p-12 mt-10 mb-10 lg:mb-20 lg:mt-20 rounded-lg transition-colors duration-500">
+    <section className="bg-white dark:bg-neutral-800 p-6 sm:p-8 lg:p-12 mt-10 mb-10 lg:mb-20 lg:mt-20 rounded-lg">
       <motion.div
         className="container mx-auto"
         variants={containerVariants}
