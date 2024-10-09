@@ -6,12 +6,12 @@ import { motion } from "framer-motion";
 const BlogsList = () => {
   // Animation variants for framer-motion
   const containerVariants = {
-    hidden: { opacity: 0, x: -50 },
+    hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,
-      x: 0,
+      y: 0,
       transition: {
-        staggerChildren: 0.8, // effects delay between child animations
+        staggerChildren: 0.6, // effects delay between child animations
       },
     },
   };
@@ -48,7 +48,7 @@ const BlogsList = () => {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.4 }}
+          viewport={{ once: true, amount: 0.2 }} // control animation entry at viewport level
         >
           {blogs.map((blog) => (
             <motion.div
