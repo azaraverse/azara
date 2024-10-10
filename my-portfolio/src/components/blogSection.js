@@ -40,7 +40,7 @@ const BlogsList = () => {
           From My Thoughts
         </h2>
         <p className="text-base sm:text-lg mb-8 sm:mb-12 text-center">
-          Sharing my thoughts and lessons on <span className="text-blue-700 dark:text-blue-400 font-mono">Dev</span>
+          Sharing my thoughts and lessons on <span className="text-blue-700 dark:text-blue-400 font-mono">Dev Experiences</span>
         </p>
 
         <motion.div

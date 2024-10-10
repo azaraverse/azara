@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-const TypingEffect = () => {
+const TypingEffect = ({ skillsArray }) => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [displayedWord, setDisplayedWord] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [speed, setSpeed] = useState(150); // Speed for typing/deleting
 
   // Handle typing and deleting effect
-  useEffect((words=["Code", "Python", "Django", "JavaScript", "React"]) => {
+  useEffect((words=skillsArray) => {
     const currentWord = words[currentWordIndex];
 
     if (!isDeleting && displayedWord === currentWord) {
@@ -33,7 +33,7 @@ const TypingEffect = () => {
     }, speed);
 
     return () => clearTimeout(handleTyping);
-  }, [speed, displayedWord, isDeleting, currentWordIndex]);
+  }, [speed, displayedWord, isDeleting, currentWordIndex, skillsArray]);
 
   return (
     <motion.p

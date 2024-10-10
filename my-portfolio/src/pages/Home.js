@@ -6,6 +6,8 @@ import TypingCodeBlock from "../helpers/TypingCode";
 import TypingEffect from "../helpers/TypeWords";
 import BlogsList from "../components/blogSection";
 
+const wordsArray = ["Code", "Python", "Django", "JavaScript", "React"];
+
 const Home = ({ darkMode }) => {
 
   // eslint-disable-next-line
@@ -51,7 +53,7 @@ const Home = ({ darkMode }) => {
             Hi! I am <span className="text-blue-700 dark:text-blue-400 transition-colors duration-500">Azara</span>.
           </motion.h1>
 
-          <TypingEffect />
+          <TypingEffect skillsArray={wordsArray} />
 
           {/* Social Links */}
           <motion.div
