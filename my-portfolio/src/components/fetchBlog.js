@@ -48,7 +48,7 @@ const BlogPost = () => {
                   className="w-10 h-10 rounded-2xl" />
                 )}
                   <div className="ml-4">
-                    <p className="text-sm font-semibold text-gray-300">{metadata.author.name}</p>
+                    <p className="text-sm font-semibold text-gray-400 dark:text-gray-300">{metadata.author.name}</p>
                   </div>
               </div>
             )}
