@@ -10,7 +10,7 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className={`fixed w-full z-10 top-0 shadow-md ${darkMode ? "bg-neutral-800 text-white" : "bg-white text-gray-900"} transition-colors duration-500`}>
+    <nav className={`fixed object-bottom w-full z-10 top-0 shadow-md ${darkMode ? "bg-neutral-800 text-white" : "bg-white text-gray-900"} transition-colors duration-500`}>
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         {/* Logo */}
         <NavLink to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
