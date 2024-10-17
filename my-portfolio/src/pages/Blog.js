@@ -36,7 +36,7 @@ const Blog = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
-        <h2 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6 lg:mb-8 text-center dark:text-white">
+        <h2 className="text-3xl sm:text-4xl font-bold mt-20 mb-4 sm:mb-6 lg:mb-8 text-center dark:text-white">
           Blogs
         </h2>
         <p className="text-base sm:text-lg mb-8 sm:mb-12 text-center dark:text-white">
