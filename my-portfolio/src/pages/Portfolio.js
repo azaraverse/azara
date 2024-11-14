@@ -1,13 +1,14 @@
 const projects = [
   { id: 1, title: 'BMP Studio Web App', description: 'A dynamic web app for BMP Studio', url: 'https://github.com/azaraverse/bmp_studio.git' },
-  { id: 2, title: 'skysync', description: 'A dynamic web app for displaying weather data', url: 'https://skysync-steel.vercel.app' },
-  { id: 3, title: 'Files Manager', description: 'A files manager built with NodeJs, existing only on the CLI.', url: 'https://github.com/azaraverse/alx-files_manager.git' },
+  { id: 2, title: 'Azara', description: 'My personal portfolio website', url: 'https://muqitazara.tech/' },
+  { id: 3, title: 'skysync', description: 'A dynamic web app for displaying weather data', url: 'https://skysync-steel.vercel.app' },
+  { id: 4, title: 'Files Manager', description: 'A files manager built with NodeJs, existing only on the CLI.', url: 'https://github.com/azaraverse/alx-files_manager.git' },
 ];
 
 const Portfolio = () => {
   return (
-    <div className="container mx-auto mt-8">
-      <h1 className="text-4xl font-bold text-center mt-20 pt-20">
+    <div className="min-h-screen mx-auto mt-8 px-10 dark:bg-neutral-900 transition-colors duration-200">
+      <h1 className="text-4xl font-bold text-center mt-10 pt-20 dark:text-white">
         My Portfolio
       </h1>
 

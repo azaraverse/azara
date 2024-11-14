@@ -110,12 +110,12 @@ const BlogsList = () => {
               </Link>
 
               <div>
-                <div className="text-sm text-left text-gray-500 dark:text-gray-300 transition-colors duration-500">{new Date(blog.publishedAt).toDateString()}</div>
+                <div className="text-sm text-left text-gray-500 dark:text-gray-300">{new Date(blog.publishedAt).toDateString()}</div>
                 <Link to={`${blog.url}`}>
                   <h3 className="text-left text-lg sm:text-xl font-semibold dark:text-white hover:text-blue-700">{blog.title}</h3>
                 </Link>
-                <p className="text-left mt-1 sm:mt-2 text-gray-600 dark:text-gray-300 transition-colors duration-500 text-xs">{blog.author.name}</p>
-                <p className="text-left mt-1 sm:mt-2 text-gray-600 dark:text-gray-300 transition-colors duration-500 text-sm">
+                <p className="text-left mt-1 sm:mt-2 text-gray-600 dark:text-gray-300 text-xs">{blog.author.name}</p>
+                <p className="text-left mt-1 sm:mt-2 text-gray-600 dark:text-gray-300 text-sm">
                   {blog.brief}
                   <Link to={`${blog.url}`}>
                     <span className="hover:text-blue-500 text-blue-700 dark:text-blue-400"> Read more</span>
