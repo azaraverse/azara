@@ -26,9 +26,9 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
             <span className="font-mono">Portfolio()</span>
           </NavLink>
           <NavLink
-            to="/blogs"
+            to="https://blog.muqitazara.tech"
             className={({ isActive }) => `font-semibold text-blue-700 dark:text-blue-400 transition-colors duration-500 px-5 py-2 ${isActive ? "text-blue-700 underline decoration-double hover:text-gray-700" : "hover:text-gray-700 dark:hover:text-white"}`}>
-            <span className="font-mono">Blogs()</span>
+            <span className="font-mono">Blog()</span>
           </NavLink>
 
           {/* Social Links */}

@@ -1,9 +1,56 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import blogs from "./blogList";
 import { motion } from "framer-motion";
+import { GraphQLClient, gql } from "graphql-request";
 
 const BlogsList = () => {
+  const [blogs, setBlogs] = useState([]);
+  const apiUrl = "https://gql.hashnode.com/";
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      const client = new GraphQLClient(apiUrl);
+      const query = gql`
+        query {
+          user(username: "azaraverse") {
+            id
+            posts(page: 1, pageSize: 5) {
+              totalDocuments
+              nodes {
+                id
+                slug
+                title
+                coverImage {
+                  url
+                }
+                author {
+                  id
+                  name
+                }
+                tags {
+                  id
+                  name
+                }
+                publishedAt
+                updatedAt
+                brief
+                url
+              }
+            }
+
+          }
+        }`
+      try {
+        const data = await client.request(query);
+        setBlogs(data.user.posts.nodes);
+      } catch (error) {
+        console.error(`Error fetching blogs: ${error}`);
+      }
+    }
+
+    fetchBlogs();
+  }, []);
+
   // Animation variants for framer-motion
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -55,17 +102,20 @@ const BlogsList = () => {
               key={blog.slug}
               variants={itemVariants}
               className="flex flex-col lg:flex-row lg:space-x-6 space-y-6 lg:space-y-8">
-              <img
-                src={blog.cover_image}
-                alt={blog.title}
-                className="lg:w-40 h-auto lg:h-40 md:aspect-w-1 md:aspect-h-1 object-cover rounded-lg" />
+              <Link to={`${blog.url}`}>
+                <img
+                  src={blog.coverImage.url}
+                  alt={blog.title}
+                  className="lg:w-40 h-auto lg:h-40 md:aspect-w-1 md:aspect-h-1 object-cover rounded-lg hover:scale-105 transition-transform duration-300" />
+              </Link>
 
               <div>
-                <div className="text-sm text-left text-gray-500 dark:text-gray-300 transition-colors duration-500">{blog.date} &#124; {blog.category}</div>
-                <Link to={`/blog/${blog.slug}`}>
+                <div className="text-sm text-left text-gray-500 dark:text-gray-300 transition-colors duration-500">{new Date(blog.publishedAt).toDateString()}</div>
+                <Link to={`${blog.url}`}>
                   <h3 className="text-left text-lg sm:text-xl font-semibold dark:text-white hover:text-blue-700">{blog.title}</h3>
                 </Link>
                 <p className="text-left mt-1 sm:mt-2 text-gray-600 dark:text-gray-300 transition-colors duration-500 text-sm">{blog.author.name}</p>
+                <p className="text-left mt-1 sm:mt-2 text-gray-600 dark:text-gray-300 transition-colors duration-500 text-sm">{blog.brief}</p>
               </div>
             </motion.div>
           ))}

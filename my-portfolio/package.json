@@ -10,6 +10,7 @@
     "buffer": "^6.0.3",
     "framer-motion": "^11.11.1",
     "front-matter": "^4.0.2",
+    "graphql-request": "^7.1.2",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.447.0",
     "prismjs": "^1.29.0",
