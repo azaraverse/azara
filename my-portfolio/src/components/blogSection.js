@@ -26,6 +26,7 @@ const BlogsList = () => {
                 author {
                   id
                   name
+                  profilePicture
                 }
                 tags {
                   id
@@ -114,7 +115,13 @@ const BlogsList = () => {
                 <Link to={`${blog.url}`}>
                   <h3 className="text-left text-lg sm:text-xl font-semibold dark:text-white hover:text-blue-700">{blog.title}</h3>
                 </Link>
-                <p className="text-left mt-1 sm:mt-2 text-gray-600 dark:text-gray-300 text-xs">{blog.author.name}</p>
+                <div className="flex gap-3 items-center">
+                  <p className="text-left mt-1 sm:mt-2 text-gray-600 dark:text-gray-300 text-xs">{blog.author.name}</p>
+                  <img
+                    src={blog.author.profilePicture}
+                    alt={blog.author.name}
+                    className="size-6 rounded-full items-center" />
+                </div>
                 <p className="text-left mt-1 sm:mt-2 text-gray-600 dark:text-gray-300 text-sm">
                   {blog.brief}
                   <Link to={`${blog.url}`}>
