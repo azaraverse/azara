@@ -91,7 +91,7 @@ const BlogsList = () => {
         </p>
 
         <motion.div
-          className="grid grid-cols-2 gap-10 lg:gap-12"
+          className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-12"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -114,8 +114,13 @@ const BlogsList = () => {
                 <Link to={`${blog.url}`}>
                   <h3 className="text-left text-lg sm:text-xl font-semibold dark:text-white hover:text-blue-700">{blog.title}</h3>
                 </Link>
-                <p className="text-left mt-1 sm:mt-2 text-gray-600 dark:text-gray-300 transition-colors duration-500 text-sm">{blog.author.name}</p>
-                <p className="text-left mt-1 sm:mt-2 text-gray-600 dark:text-gray-300 transition-colors duration-500 text-sm">{blog.brief}</p>
+                <p className="text-left mt-1 sm:mt-2 text-gray-600 dark:text-gray-300 transition-colors duration-500 text-xs">{blog.author.name}</p>
+                <p className="text-left mt-1 sm:mt-2 text-gray-600 dark:text-gray-300 transition-colors duration-500 text-sm">
+                  {blog.brief}
+                  <Link to={`${blog.url}`}>
+                    <span className="hover:text-blue-500 text-blue-700 dark:text-blue-400"> Read more</span>
+                  </Link>
+                </p>
               </div>
             </motion.div>
           ))}
