@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const projects = [
   { id: 1, title: 'BMP Studio Web App', description: 'A dynamic web app for BMP Studio', url: 'https://github.com/azaraverse/bmp_studio.git' },
   { id: 2, title: 'Azara', description: 'My personal portfolio website', url: 'https://muqitazara.tech/' },
@@ -11,6 +13,14 @@ const Portfolio = () => {
       <h1 className="text-4xl font-bold text-center mt-10 pt-20 dark:text-white">
         My Portfolio
       </h1>
+      <div className="text-center text-sm my-4">
+        <p className="text-red-500">This page is in WIP mode - Work In Progress</p>
+        <p className="dark:text-white">
+          Read my latest blog <Link to="https://blog.muqitazara.tech">
+            <span className="text-blue-700 underline">here</span>
+          </Link>
+        </p>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
         {projects.map((project) => (
