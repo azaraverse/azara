@@ -28,6 +28,7 @@ const BlogsList = () => {
                   name
                   profilePicture
                 }
+                readTimeInMinutes
                 tags {
                   id
                   name
@@ -111,16 +112,20 @@ const BlogsList = () => {
               </Link>
 
               <div>
-                <div className="text-sm text-left text-gray-500 dark:text-gray-300">{new Date(blog.publishedAt).toDateString()}</div>
+                <div className="flex items-center text-sm space-x-2">
+                  <p className="text-left text-gray-600 dark:text-gray-300">{new Date(blog.publishedAt).toDateString()}</p>
+                  <span className="text-gray-600 dark:text-gray-300">&bull;</span>
+                  <p className="text-gray-600 dark:text-gray-300">{blog.readTimeInMinutes} min read</p>
+                </div>
                 <Link to={`${blog.url}`}>
                   <h3 className="text-left text-lg sm:text-xl font-semibold dark:text-white hover:text-blue-700">{blog.title}</h3>
                 </Link>
                 <div className="flex gap-3 items-center">
-                  <p className="text-left mt-1 sm:mt-2 text-gray-600 dark:text-gray-300 text-xs">{blog.author.name}</p>
                   <img
                     src={blog.author.profilePicture}
                     alt={blog.author.name}
                     className="size-6 rounded-full items-center" />
+                  <p className="text-left text-gray-600 dark:text-gray-300 text-xs">{blog.author.name}</p>
                 </div>
                 <p className="text-left mt-1 sm:mt-2 text-gray-600 dark:text-gray-300 text-sm">
                   {blog.brief}
