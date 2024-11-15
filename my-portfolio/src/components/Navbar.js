@@ -82,10 +82,10 @@ const Navbar = ({ toggleDarkMode, darkMode }) => {
             <span className="font-mono">Portfolio()</span>
           </NavLink>
           <NavLink
-            to="/blogs"
+            to="https://blog.muqitazara.tech"
             className="block py-2 px-6 text-blue-700 dark:text-blue-400 transition-colors duration-500 hover:bg-gray-100 rounded"
             onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            <span className="font-mono">Blogs()</span>
+            <span className="font-mono">Blog()</span>
           </NavLink>
 
           {/* Social Links */}
